@@ -1,16 +1,18 @@
 import '@/styles/main.scss'
+import '@mdi/font/css/materialdesignicons.css'
 import { createVuetify } from 'vuetify'
 
 const myCustomLightTheme = {
     colors: {
         background: '#FFFFFF',
-        surface: '#FFFFFF',
+        header: '#FFF7EB',
         primary: '#337566',
         secondary: '#E8E8E8',
         error: '#B00020',
         info: '#0F0F0F',
         success: '#4CAF50',
         warning: '#FB8C00',
+        divider: '#CCCCCC',
       },
 }
 
