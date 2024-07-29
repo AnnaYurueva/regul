@@ -6,6 +6,8 @@ const myCustomLightTheme = {
     colors: {
         background: '#FFFFFF',
         header: '#FFF7EB',
+        footer: '#F5F5F5',
+        'footer-link': '#6B6B6B',
         primary: '#337566',
         secondary: '#E8E8E8',
         error: '#B00020',
