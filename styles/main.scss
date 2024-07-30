@@ -1,4 +1,13 @@
 @use "vuetify" with (
   $color-pack: false,
-  $body-font-family: "Inter"
+  $body-font-family: "Inter",
+  $rounded: false,
+);
+
+$rounded: (
+  'sm': 4px,
+  'md': 12px,
+  'lg': 20px,
+  'xl': 40px,
+  'circle': 50%
 );
