@@ -14,12 +14,14 @@
                             Документы проверены
                         </span>
                     </div>
+                    <span>•</span>
                     <div>
                         <v-icon color="primary" icon="mdi-star" size="x-small" />
                         <span>
                             {{ company.rating }}
                         </span>
                     </div>
+                    <span>•</span>
                     <div>
                         <span>
                             {{ company.revievs }}
@@ -38,9 +40,9 @@
             </v-card-actions>
         </v-card>
         <div class="d-flex justify-center ga-2 mb-8">
-            <v-list-item class="navigation" active-class="selected-nav" link active href="/">Товары и услуги</v-list-item>
-            <v-list-item class="navigation" active-class="selected-nav" link href="/agents">Агенты <span>{{ company.agents }}</span></v-list-item>
-            <v-list-item class="navigation" active-class="selected-nav" link href="/about">О компании</v-list-item>
+            <v-list-item class="navigation" active-class="selected-nav" exact no-perfetch to="/">Товары и услуги</v-list-item>
+            <v-list-item class="navigation" active-class="selected-nav" exact no-perfetch to="/agents">Агенты <span>{{ company.agents }}</span></v-list-item>
+            <v-list-item class="navigation" active-class="selected-nav" exact no-perfetch to="/about">О компании</v-list-item>
         </div>
 
         <v-divider></v-divider>

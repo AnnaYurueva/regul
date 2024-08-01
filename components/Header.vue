@@ -24,12 +24,21 @@
 
             <v-list>
                 <v-list-item>
-                    <v-list-item-title>Войти</v-list-item-title>
+                    <v-list-item-title>
+                        <v-list-item v-if="true" link href="/login">Войти</v-list-item>
+                        <v-list-item v-else @click.prevent="logout" href="/">Выйти</v-list-item>
+                    </v-list-item-title>
                 </v-list-item>
             </v-list>
         </v-menu>
     </v-toolbar>
 </template>
+
+<script setup>
+const logout = () => {
+    //чистим стор
+}
+</script>
 
 <style lang="scss">
 .v-toolbar-title.logo {
