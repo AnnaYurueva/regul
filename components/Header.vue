@@ -1,18 +1,23 @@
 <template>
-    <v-toolbar class="bg-header px-8">
+    <v-toolbar class="bg-header px-md-8" :density="smAndDown ? 'comfortable' : ''">
+        <v-btn v-if="smAndDown" v-bind="props" prepend-icon="mdi-menu" variant="text" />
+        <v-spacer v-if="smAndDown" />
+
 
         <v-toolbar-title class="logo font-weight-medium">Annoncé</v-toolbar-title>
-        <v-btn class="text-none" color="secondary" prepend-icon="mdi-dots-square" variant="flat" rounded="xl" size="large">
+        <v-btn v-if="mdAndUp" class="text-none" color="secondary" prepend-icon="mdi-dots-square" variant="flat" rounded="xl"
+            size="large">
             Все категории
         </v-btn>
 
         <v-spacer></v-spacer>
-        <v-btn class="text-none" color="info" prepend-icon="mdi-map-marker" variant="text">Ростов-на-Дону</v-btn>
+        <v-btn v-if="mdAndUp" class="text-none" color="info" prepend-icon="mdi-map-marker"
+            variant="text">Ростов-на-Дону</v-btn>
 
-        <v-divider class="header-divider" thickness="1" vertical color="divider" />
-        <v-btn class="text-none" color="primary" variant="text">Разместить объявление</v-btn>
+        <v-divider v-if="mdAndUp" class="header-divider" thickness="1" vertical color="divider" />
+        <v-btn v-if="mdAndUp" class="text-none" color="primary" variant="text">Разместить объявление</v-btn>
 
-        <v-menu open-on-hover>
+        <v-menu v-if="mdAndUp" open-on-hover>
             <template v-slot:activator="{ props }">
                 <v-btn v-bind="props" class="pr-1 pt-1 pb-1" color="secondary" prepend-icon="mdi-menu" variant="flat"
                     rounded="xl" size="x-large">
@@ -31,6 +36,13 @@
                 </v-list-item>
             </v-list>
         </v-menu>
+
+        <v-btn v-if="smAndDown" class="text-none" stacked>
+            <v-badge color="primary" content="1">
+                <v-icon>mdi-basket-outline</v-icon>
+            </v-badge>
+        </v-btn>
+
     </v-toolbar>
 </template>
 
@@ -38,6 +50,10 @@
 const logout = () => {
     //чистим стор
 }
+
+import { useDisplay } from 'vuetify'
+
+const { smAndDown, mdAndUp } = useDisplay()
 </script>
 
 <style lang="scss">
