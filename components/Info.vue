@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card class="mx-auto" width="auto" variant="text">
+        <v-card v-if="mdAndUp" class="mx-auto" width="auto" variant="text">
             <v-img class="align-end text-white mx-auto mb-6 pa-0 rounded-lg" height="120" width="120" :src="company.logo"
                 cover />
 
@@ -39,7 +39,7 @@
                 </v-btn>
             </v-card-actions>
         </v-card>
-        <div class="d-flex justify-center ga-2 mb-8">
+        <div class="d-flex justify-md-center ga-2 my-2 mb-md-8 mt-md-0 -mx-4 overflow-x-auto px-4">
             <v-list-item class="navigation" active-class="selected-nav" exact no-perfetch to="/">Товары и услуги</v-list-item>
             <v-list-item class="navigation" active-class="selected-nav" exact no-perfetch to="/agents">Агенты <span>{{ company.agents }}</span></v-list-item>
             <v-list-item class="navigation" active-class="selected-nav" exact no-perfetch to="/about">О компании</v-list-item>
@@ -50,9 +50,11 @@
 </template>
 
 <script setup>
+import { useDisplay } from 'vuetify'
 import logo from '/public/images/Img.png'
 
 const { declination } = useHelpers();
+const { mdAndUp } = useDisplay()
 
 const company = {
     name: 'Наследие',

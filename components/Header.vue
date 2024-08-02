@@ -1,16 +1,14 @@
 <template>
     <v-toolbar class="bg-header px-md-8" :density="smAndDown ? 'comfortable' : ''">
         <v-btn v-if="smAndDown" v-bind="props" prepend-icon="mdi-menu" variant="text" />
-        <v-spacer v-if="smAndDown" />
 
-
-        <v-toolbar-title class="logo font-weight-medium">Annoncé</v-toolbar-title>
+        <v-toolbar-title class="logo font-weight-medium w-100 ml-16 ml-md-0">Annoncé</v-toolbar-title>
         <v-btn v-if="mdAndUp" class="text-none" color="secondary" prepend-icon="mdi-dots-square" variant="flat" rounded="xl"
             size="large">
             Все категории
         </v-btn>
 
-        <v-spacer></v-spacer>
+        <v-spacer v-if="mdAndUp" />
         <v-btn v-if="mdAndUp" class="text-none" color="info" prepend-icon="mdi-map-marker"
             variant="text">Ростов-на-Дону</v-btn>
 
