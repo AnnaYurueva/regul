@@ -11,7 +11,7 @@
             </v-chip>
         </template>
 
-        <template v-slot:append class="w-100">
+        <template v-slot:append>
             <v-btn class="text-none" color="secondary" text="Действия" variant="flat" rounded="lg" />
         </template>
 

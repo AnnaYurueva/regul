@@ -1,5 +1,5 @@
 export const useHelpers = () => {
-  const declination = (number, one, two, five) => {
+  const declination = (number: number, one: string, two: string, five:string) => {
     let n = Math.abs(number)
     n %= 100
     if (n >= 5 && n <= 20) {
