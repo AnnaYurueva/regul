@@ -14,7 +14,12 @@ export const useHelpers = () => {
     }
     return five
   }
+  const sliceThousand = (value: number) => {
+    const formatter = new Intl.NumberFormat('ru-RU', {})
+    return formatter.format(value)
+  }
   return {
     declination,
+    sliceThousand
   }
 }
