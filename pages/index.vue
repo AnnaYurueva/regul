@@ -86,7 +86,7 @@ const data = [
 ]
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .cards-container {
    display: grid;
 

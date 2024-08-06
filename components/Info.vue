@@ -6,30 +6,7 @@
 
             <v-card-title class="text-center mb-3 pa-0 text-h5">{{ company.name }}</v-card-title>
 
-            <v-card-subtitle class="opacity-100 mx-auto mb-6">
-                <div class="d-flex ga-1 justify-center">
-                    <div v-if="company.check_doc">
-                        <v-icon color="primary" icon="mdi-check-decagram" size="x-small" />
-                        <span>
-                            Документы проверены
-                        </span>
-                    </div>
-                    <span>•</span>
-                    <div>
-                        <v-icon color="primary" icon="mdi-star" size="x-small" />
-                        <span>
-                            {{ company.rating }}
-                        </span>
-                    </div>
-                    <span>•</span>
-                    <div>
-                        <span>
-                            {{ company.revievs }}
-                            {{ declination(company.revievs, 'отзыв', 'отзыва', 'отзывов') }}
-                        </span>
-                    </div>
-                </div>
-            </v-card-subtitle>
+            <statistic-content class="mx-auto mb-6 text-center d-flex justify-center" :revievs="company.revievs" :rating="company.rating" :check_doc="company.check_doc" />
 
             <v-card-actions class="pa-0 mb-8">
                 <v-btn class="px-5 mx-auto" rounded="lg" size="x-large" color="primary" variant="flat">
@@ -40,9 +17,12 @@
             </v-card-actions>
         </v-card>
         <div class="d-flex justify-md-center ga-2 my-2 mb-md-8 mt-md-0 -mx-4 overflow-x-auto px-4">
-            <v-list-item class="navigation" active-class="selected-nav" exact no-perfetch to="/">Товары и услуги</v-list-item>
-            <v-list-item class="navigation" active-class="selected-nav" exact no-perfetch to="/agents">Агенты <span>{{ company.agents }}</span></v-list-item>
-            <v-list-item class="navigation" active-class="selected-nav" exact no-perfetch to="/about">О компании</v-list-item>
+            <v-list-item class="navigation" active-class="selected-nav" exact no-perfetch to="/">Товары и
+                услуги</v-list-item>
+            <v-list-item class="navigation" active-class="selected-nav" exact no-perfetch to="/agents">Агенты <span>{{
+                company.agents }}</span></v-list-item>
+            <v-list-item class="navigation" active-class="selected-nav" exact no-perfetch to="/about">О
+                компании</v-list-item>
         </div>
 
         <v-divider></v-divider>

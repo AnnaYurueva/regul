@@ -75,8 +75,6 @@ const { declination, sliceThousand } = useHelpers();
         .v-card-title {
             font-size: 17px;
         }
-
-
     }
 
     .v-card-text {
