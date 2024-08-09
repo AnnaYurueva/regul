@@ -14,7 +14,7 @@
             <v-expansion-panels v-model="panel" readonly>
                 <v-expansion-panel elevation="0" color="footer">
                     <v-expansion-panel-title>
-                        <h2 class="mb-2">
+                        <h2>
                             Режим работы
                         </h2>
                     </v-expansion-panel-title>
@@ -81,7 +81,7 @@ const { smAndDown, mdAndUp } = useDisplay()
     .v-responsive,
     .v-responsive__sizer {
         @media (min-width: 961px) {
-            width: 200px !important;
+            width: 241px !important;
         }
 
         @media (max-width: 960px) {
@@ -94,6 +94,9 @@ const { smAndDown, mdAndUp } = useDisplay()
         opacity: 30%;
         border-radius: 16px;
         overflow: hidden;
+    }
+    .v-expansion-panel-title {
+        padding: 20px;
     }
 
     .v-expansion-panel-text__wrapper {
