@@ -20,10 +20,10 @@ const form = ref({
     login: '',
 })
 const router = useRouter()
-// const { authorization } = useLogin()
+const { authorization } = useLogin()
 
 const onSubmit = function () {
-    // authorization(form.value.login)
+    authorization(form.value.login)    
     router.push('/')
 }
 </script>

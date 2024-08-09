@@ -1,5 +1,7 @@
-// export default function({store, redirect}) {
-//     if(!store.getters.login) {
-//         redirect('/login')
-//     }
-// }
+export default defineNuxtRouteMiddleware((to, from) => {
+    const { checkLogin } = useLogin()
+
+    if (!checkLogin) {
+        return navigateTo('/login');
+    }
+})

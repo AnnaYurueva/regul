@@ -28,8 +28,8 @@
             <v-list>
                 <v-list-item>
                     <v-list-item-title>
-                        <v-list-item v-if="true" link href="/login">Войти</v-list-item>
-                        <v-list-item v-else @click.prevent="logout" href="/">Выйти</v-list-item>
+                        <v-list-item v-if="!checkLogin" link href="/login">Войти</v-list-item>
+                        <v-list-item v-else @click.prevent="exit" href="/">Выйти</v-list-item>
                     </v-list-item-title>
                 </v-list-item>
             </v-list>
@@ -45,13 +45,14 @@
 </template>
 
 <script setup>
-const logout = () => {
-    //чистим стор
-}
-
 import { useDisplay } from 'vuetify'
 
+const { logout, checkLogin } = useLogin()
 const { smAndDown, mdAndUp } = useDisplay()
+
+const exit = () => {
+    logout()
+}
 </script>
 
 <style lang="scss">
